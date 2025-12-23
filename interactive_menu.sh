@@ -65,7 +65,7 @@ function menu(){
     $(ColorGreen '4)') Kernel version
     $(ColorGreen '5)') Check All
     $(ColorGreen '0)') Exit
-    $(ColorBlue 'Choose an option:)') "
+    $(ColorBlue 'Choose an option: ')"
         read a
         case $a in 
             1) check_disk_usage ; menu ;;
