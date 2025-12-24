@@ -1,12 +1,14 @@
 #!/bin/bash
 output=$(curl -s "https://quizapi.io/api/v1/questions?apiKey=${API_KEY}&limit=10")
 
+echo "API_KEY: ${API_KEY}"
 
 if ! echo "$output" | jq -e '.[0]' > /dev/null 2>&1; then
     echo "API Error:"
     echo "$output" | jq .
     exit 1
 fi
+
 
 
 output=$(echo $output | jq .[0])
